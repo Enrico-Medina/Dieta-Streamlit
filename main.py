@@ -53,12 +53,12 @@ if st.button('Calcular Nutrientes'):
     # Renomeando as colunas para a exibição no DataFrame
     resultado_df.rename(columns={
         'tmb': 'Taxa Metabólica Basal',
-        'prot': 'Proteínas',
-        'carbs': 'Carboidratos',
-        'fats': 'Gorduras',
-        'calcium': 'Cálcio',
-        'magnesium': 'Magnésio',
-        'zinc': 'Zinco'
+        'prot': 'Proteínas (g)',
+        'carbs': 'Carboidratos (g)',
+        'fats': 'Gorduras(g)',
+        'calcium': 'Cálcio (mg)',
+        'magnesium': 'Magnésio (mg)',
+        'zinc': 'Zinco (mg)'
     }, inplace=True)
     st.write("Resultado:")
     st.table(resultado_df)
