@@ -11,7 +11,7 @@ sexo = st.number_input("Insira o seu sexo:", min_value=1, max_value=2, format='%
 st.write("1 para masculino e 2 para feminino")
 st.write("---")
 
-peso = st.number_input("Insira o seu peso em kg:", min_value=40, max_value=120, step=1, , format='%d')
+peso = st.number_input("Insira o seu peso em kg:", min_value=40, max_value=120, step=1, format='%d')
 st.write("---")
 
 altura = st.number_input("Insira a sua altura em cm:", min_value=120, max_value=200, step=1, format='%d')
