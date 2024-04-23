@@ -1,4 +1,5 @@
 import streamlit as st
+import pandas as pd
 
 st.set_page_config(page_title = "Calculadora de Dieta Ideal")
 st.title("Calculadora de Dieta Ideal")
