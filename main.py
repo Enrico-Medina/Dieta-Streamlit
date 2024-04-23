@@ -47,5 +47,18 @@ def calcular_nutrientes(sexo, peso, altura, idade, atividade_fisica):
 
 if st.button('Calcular Nutrientes'):
     resultado = calcular_nutrientes(sexo, peso, altura, idade, atividade_fisica)
+    resultado_df = pd.DataFrame([resultado])
+
+    # Renomeando as colunas para a exibição no DataFrame
+    resultado_df.rename(columns={
+        'tmb': 'Taxa Metabólica Basal',
+        'prot': 'Proteínas',
+        'carbs': 'Carboidratos',
+        'fats': 'Gorduras',
+        'calcium': 'Cálcio',
+        'magnesium': 'Magnésio',
+        'zinc': 'Zinco'
+    }, inplace=True)
+
     st.write("Resultado:")
-    st.write(resultado)
+    st.table(resultado_df)
