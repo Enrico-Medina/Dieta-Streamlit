@@ -60,6 +60,6 @@ if st.button('Calcular Nutrientes'):
         'magnesium': 'Magnésio',
         'zinc': 'Zinco'
     }, inplace=True)
-
+     resultado_df = df.reset_index(drop=True)
     st.write("Resultado:")
     st.table(resultado_df)
