@@ -1,4 +1,3 @@
-
 import streamlit as st
 
 st.set_page_config(page_title = "Calculadora de Dieta Ideal")
@@ -8,14 +7,19 @@ st.subheader("Esse programa utiliza conceitos de nutrição, saúde e otimizaç�
 with st.container():
   st.write("---")
 
-sexo = st.number_input("Insira o seu sexo:")
+sexo = st.number_input("Insira o seu sexo:, min_value=1, max_value=2, step=1")
 st.write("1 para masculino e 2 para feminino")
+st.write("---")
 
-peso = st.number_input("Insira o seu peso em kg:")
+peso = st.number_input("Insira o seu peso em kg:, min_value=40, max_value=120, step=1")
+st.write("---")
 
-altura = st.number_input("Insira a sua altura em cm:")
+altura = st.number_input("Insira a sua altura em cm:, min_value=120, max_value=200, step=1")
+st.write("---")
 
-idade = st.number_input("Insira a sua idade:")
+idade = st.number_input("Insira a sua idade:, min_value=14, max_value=90, step=1")
+st.write("---")
 
-atividade_fisica = st.number_input("Escolha entre as opções a sua frequência de atividade física")
+atividade_fisica = st.number_input("Escolha entre as opções a sua frequência de atividade física:, min_value=1, max_value=5, step=1")
 st.write("1 - sedentário, 2 - levemente ativo, 3 - moderadamente ativo, 4 - muito ativo, 5 - super ativo")
+st.write("---")
