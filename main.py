@@ -3,7 +3,7 @@ import pandas as pd
 from transformers import pipeline
 
 # Dataframe Raw
-df_nutricional = pd.read_excel("df_nutricional_classified (1).xlsx")
+df_nutricional = pd.read_excel("df.xlsx")
 
 st.set_page_config(page_title = "Calculadora de Dieta Ideal")
 st.title("Calculadora de Dieta Ideal")
@@ -12,8 +12,8 @@ st.subheader("Este programa utiliza conceitos de nutrição, saúde e otimizaç�
 with st.container():
   st.write("---")
 
-sexo = st.number_input("Insira o seu sexo:", min_value=1, max_value=2, value=1, format='%d')
-st.write("1 para masculino e 2 para feminino")
+sexo = st.selectbox("Selecione seu sexo:", ('Masculino', 'Feminino'), index=0)
+sexo = 1 if sexo == 'Masculino' else 2
 st.write("---")
 
 peso = st.number_input("Insira o seu peso em kg:", min_value=40, max_value=120, value=70, step=1, format='%d')
@@ -152,7 +152,7 @@ if st.button('Calcular refeições'):
                 if refeicao in dados['refeicao_do_dia'].split(', ') and quantidade[alimento].solution_value() > 0:
                     descricao = dados['descricao']
                     quantidade_alimento = round(quantidade[alimento].solution_value(), 2)
-                    results.append(f"{descricao}: {quantidade_alimento} unidades")
+                    results.append(f"{descricao}: {quantidade_alimento} unidades.")
             if results:
                 st.write('\n'.join(results))
             else:
