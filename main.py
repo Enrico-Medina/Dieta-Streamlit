@@ -1,3 +1,4 @@
+pip install transformers
 import streamlit as st
 import pandas as pd
 from transformers import pipeline
