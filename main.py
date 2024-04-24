@@ -7,7 +7,7 @@ df_nutricional = pd.read_excel("df_nutricional_classified (1).xlsx")
 
 st.set_page_config(page_title = "Calculadora de Dieta Ideal")
 st.title("Calculadora de Dieta Ideal")
-st.subheader("Esse programa utiliza conceitos de nutrição, saúde e otimização para a criação de uma dieta ideal para você.")
+st.subheader("Este programa utiliza conceitos de nutrição, saúde e otimização para a criação de uma dieta ideal para você.")
 
 with st.container():
   st.write("---")
