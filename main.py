@@ -7,7 +7,7 @@ df_nutricional = pd.read_excel("df_nutricional_classified (1).xlsx")
 
 st.set_page_config(page_title = "Calculadora de Dieta Ideal")
 st.title("Calculadora de Dieta Ideal")
-st.subheader("Este programa utiliza conceitos de nutrição, saúde e otimização para a criação de uma dieta ideal para você.")
+st.subheader("Esse programa utiliza conceitos de nutrição, saúde e otimização para a criação de uma dieta ideal para você.")
 
 with st.container():
   st.write("---")
@@ -50,9 +50,10 @@ def calcular_nutrientes(sexo, peso, altura, idade, atividade_fisica):
     }
     return nutrientes
 
+resultados_nutrientes = calcular_nutrientes(sexo, peso, altura, idade, atividade_fisica)
+
 if st.button('Calcular Nutrientes'):
-    resultado = calcular_nutrientes(sexo, peso, altura, idade, atividade_fisica)
-    resultado_df = pd.DataFrame([resultado])
+    resultado_df = pd.DataFrame([resultados_nutrientes])
 
     # Renomeando as colunas para a exibição no DataFrame
     resultado_df.rename(columns={
@@ -70,7 +71,7 @@ if st.button('Calcular Nutrientes'):
     # Criando um Dict com todas as variáveis linkadas ao ID que serão utilizadas no modelo
 alimentos = {}
 
-for index, row in df_clean_classified.iterrows():
+for index, row in df_nutricional.iterrows():
     id_alimento = row['id']
 
     valores_nutricionais = {
